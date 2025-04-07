@@ -1,0 +1,71 @@
+{
+    "market_data_path": "s3://market-data/daily/",
+    "user_data_path": "s3://user-data/transactions/",
+    "output_bucket": "model-predictions",
+    "output_prefix": "stock-propensity",
+    "mlflow_tracking_uri": "http://mlflow-server:5000",
+    "experiment_name": "stock_propensity_model",
+    
+    "categorical_columns": [
+      "sector", 
+      "market_cap_category", 
+      "day_of_week"
+    ],
+    
+    "numerical_columns": [
+      "close_price", 
+      "open_price",
+      "high_price",
+      "low_price",
+      "volume", 
+      "avg_volume_30d",
+      "price_momentum", 
+      "volume_ratio", 
+      "volatility", 
+      "days_since_last_purchase",
+      "portfolio_diversity_score",
+      "risk_tolerance"
+    ],
+    
+    "feature_columns": [
+      "price_momentum", 
+      "volume_ratio", 
+      "volatility", 
+      "days_since_last_purchase",
+      "sector_Technology",
+      "sector_Finance",
+      "sector_Healthcare",
+      "sector_Consumer",
+      "sector_Energy",
+      "sector_Utilities",
+      "sector_Materials",
+      "sector_RealEstate",
+      "sector_Other",
+      "market_cap_category_Large",
+      "market_cap_category_Mid",
+      "market_cap_category_Small",
+      "day_of_week_Monday",
+      "day_of_week_Tuesday",
+      "day_of_week_Wednesday", 
+      "day_of_week_Thursday",
+      "day_of_week_Friday",
+      "portfolio_diversity_score",
+      "risk_tolerance"
+    ],
+    
+    "label_column": "purchased_stock",
+    "prediction_threshold": 0.5,
+    
+    "max_depth": 6,
+    "learning_rate": 0.1,
+    "n_estimators": 100,
+    "objective": "binary:logistic",
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "eval_metric": "auc",
+    "early_stopping_rounds": 10,
+    "random_seed": 42,
+    
+    "fill_value": 0,
+    "test_size": 0.2
+  }
