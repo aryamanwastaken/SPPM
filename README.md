@@ -4,7 +4,7 @@
 ![PySpark](https://img.shields.io/badge/PySpark-3.3.0-orange)
 ![XGBoost](https://img.shields.io/badge/XGBoost-1.6.2-green)
 ![AWS](https://img.shields.io/badge/AWS-S3-yellow)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
+
 
 ## Overview
 
